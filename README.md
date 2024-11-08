@@ -1,3 +1,3 @@
 # aula08_bootcamp
 
-## código não funcionou igual ao mostrado na aula, ultimo commit  consegui rodar, rever erro!
+## codigo de exportação arquivos cvs e parquet OK!!!
