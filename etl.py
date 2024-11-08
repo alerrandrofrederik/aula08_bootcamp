@@ -51,14 +51,15 @@ def carregar_dados(df: pd.DataFrame, format_saida: list):
         elif formato == 'parquet':
             df.to_parquet('data.parquet', index=False)
 
-def pipeline_calcula_kpi_de_vendas_consolidado(pasta: str, format_saida: list):
+
+def pipeline_calcula_kpi_de_vendas_consolidado(pasta: str, formato_de_saida: list):
     """
     Função que executa a pipeline de extração, transformação e carregamento dos dados
     """
     df = extrair_dados_e_consolidar(pasta)
     df_calculado = calcular_kpi_de_total_de_vendas(df)
-    carregar_dados(df_calculado, format_saida)
+    carregar_dados(df_calculado, formato_de_saida)
 
 if __name__ == '__main__':
-    pipeline_calcula_kpi_de_vendas_consolidado("data", ['csv', 'parquet'])
+    pipeline_calcula_kpi_de_vendas_consolidado('data', ['csv', 'parquet'])
 
